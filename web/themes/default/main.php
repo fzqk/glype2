@@ -1,14 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"  xml:lang="zh-CN" lang="zh-CN">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=GBK" />
+<title><!--[site_name]--></title>
 <meta name="description" content="<!--[meta_description]-->">
 <meta name="keywords" content="<!--[meta_keywords]-->">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <style type="text/css">
 	/* GLOBAL ELEMENTS */
+	/**bg color white*/
 	html,body {
 		margin: 0; padding: 0;
-		background: #0b1933;
+		background: white;
 		font-size: 100%;
 		font-family: "trebuchet ms", arial, verdana;
 		color: #444;
@@ -30,7 +33,9 @@
 	}
 	
 	/* LAYOUT */
+	/*opacity = 0  */
 	#wrapper {
+		opacity:0;
 		width: 700px;
 		margin: 0 auto 0 auto;
 		text-align: left;
@@ -198,6 +203,9 @@
 </script>
 </head>
 <body>
+<div style="float: left;font-size: 20px; font-family:'Georgia,Serif'; padding-top: 2rem;padding-left: 1rem;">
+	redirecting the url please wait (姝ｅ湪璺宠浆缃戦〉,璇风瓑寰�)銆�
+</div>
 <div id="wrapper">
 	<div id="header">
 		<h1><a href="index.php"><?php
@@ -223,15 +231,17 @@
 
 		<!--[error]-->
 
-		
+		<h2 class="first">About</h2>
 
-		<h2>请输入网址</h2>
+		<!--[description]-->
+
+		<h2>Enter URL</h2>
 
 		<!--[index_above_form]-->
 
 		<form action="includes/process.php?action=update" method="post" onsubmit="return updateLocation(this);" class="form">
 			<input type="text" name="u" id="input" size="40" class="textbox">
-			<input type="submit" value="Go!" class="button"> &nbsp;
+			<input id="loadurlbtn" type="submit" value="Go" class="button"> &nbsp; [<a style="cursor:pointer;" onclick="document.getElementById('options').style.display=(document.getElementById('options').style.display=='none'?'':'none')">options</a>]
 			<ul id="options">
 				<?php foreach ($toShow as $option) echo '<li><input type="checkbox" name="'.$option['name'].'" id="'.$option['name'].'"'.$option['checked'].'><label for="'.$option['name'].'" class="tooltip" onmouseover="tooltip(\''.$option['escaped_desc'].'\')" onmouseout="exit();">'.$option['title'].'</label></li>';?>
 			</ul>
@@ -243,15 +253,14 @@
 		<!-- CONTENT END -->
 	 
 		<ul id="nav">
-			<li class="left"><a href="index.php">主页</a></li>
-			<li class="left"><a href="edit-browser.php">编辑浏览器</a></li>
-			<li class="left"><a href="cookies.php">管理Cookies</a></li>
-			<li><a href="disclaimer.php">免责声明</a></li>            
+			<li class="left"><a href="index.php">Home</a></li>
+			<li class="left"><a href="edit-browser.php">Edit Browser</a></li>
+			<li class="left"><a href="cookies.php">Manage Cookies</a></li>
+			<li><a href="disclaimer.php">Disclaimer</a></li>            
 		</ul>
 	</div>
 	<div id="footer">
-	    ----------本在线代理由<a href="http://dodoyun.net">霧嶋 董香</a>完全汉化&nbsp;<br>Powered by <a href="http://www.glype.com/">Glype</a>&reg;<!--[version]-->.
-		
+		Powered by <a href="http://www.glype.com/">Glype</a>&reg; <!--[version]-->.
 	</div>
 </div>
 </body>
